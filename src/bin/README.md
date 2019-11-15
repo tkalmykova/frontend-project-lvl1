@@ -1,1 +1,1 @@
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/43fbbb2f6a4ce58b1140/maintainability)](https://codeclimate.com/github/tkalmykova/frontend-project-lvl1/maintainability)
