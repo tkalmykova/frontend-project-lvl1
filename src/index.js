@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
 
-const greetUser = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log();
+export const sayWelcome = () => console.log('Welcome to the Brain Games!');
 
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-};
+export const insertBlankLine = () => console.log();
 
-export default greetUser;
+export const describeRules = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
+export const getUserName = () => readlineSync.question('May I have your name? ');
+
+export const greetUser = (userName) => console.log(`Hello, ${userName}!`);

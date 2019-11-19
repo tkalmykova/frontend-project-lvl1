@@ -1,14 +1,8 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
-
-const sayWelcome = () => console.log('Welcome to the Brain Games!');
-
-const insertBlankLine = () => console.log();
-
-const describeRules = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-const getUserName = () => readlineSync.question('May I have your name? ');
-
-const greetUser = (userName) => console.log(`Hello, ${userName}!`);
+import {
+  sayWelcome, insertBlankLine, describeRules, getUserName, greetUser,
+} from '..';
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import greetUser from '..';
+import { sayWelcome, insertBlankLine } from '..';
 
-greetUser();
+sayWelcome();
+insertBlankLine();
