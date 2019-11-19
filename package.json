@@ -29,7 +29,8 @@
     "readline-sync": "^1.4.10"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
