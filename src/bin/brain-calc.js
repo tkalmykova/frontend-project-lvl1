@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import {
   sayWelcome, insertBlankLine, getUserName, greetUser, getRandomNumber, getAnswer,
 } from '..';
