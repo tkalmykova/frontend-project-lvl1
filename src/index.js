@@ -9,3 +9,7 @@ export const describeRules = () => console.log('Answer "yes" if the number is ev
 export const getUserName = () => readlineSync.question('May I have your name? ');
 
 export const greetUser = (userName) => console.log(`Hello, ${userName}!`);
+
+export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+export const getAnswer = () => readlineSync.question('Your answer: ');
