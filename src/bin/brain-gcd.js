@@ -5,6 +5,16 @@ import {
 
 const describeRulesGcd = () => console.log('Find the greatest common divisor of given numbers.');
 
+const getCorrectAnswer = (divisior, firstNum, secondNum) => {
+  let biggestDenominator = 1;
+  for (let i = divisior; i > 0; i -= 1) {
+    if (firstNum % i === 0 && secondNum % i === 0) {
+      biggestDenominator = i;
+      break;
+    }
+  }
+  return biggestDenominator;
+};
 const startGame = () => {
   sayWelcome();
   describeRulesGcd();
@@ -13,32 +23,21 @@ const startGame = () => {
   greetUser(userName);
   insertBlankLine();
 
-  const getCorrectAnswer = (firstNum, secondNum) => {
-    let biggestDenominator = 1;
-    for (let i = divisior; i > 0; i -= 1) {
-      if (firstNum % i === 0 && secondNum % i === 0) {
-        biggestDenominator = i;
-        break;
-      }
-    }
-  };
-
-  const firstNum = Math.abs(getRandomNumber(1, 10));
-  const divisior = Math.sin(firstNum / 2);
-  const secondNum = firstNum * divisior;
-  const question = () => console.log(`${firstNum}, ${secondNum}`);
-
   for (let i = 0; i < 3; i += 1) {
-    getCorrectAnswer();
-  }
-  question();
-  const answer = getAnswer();
-  const correctAnswer = String(getCorrectAnswer(firstNum, secondNum));
+    const firstNum = Math.round(getRandomNumber(1, 20));
+    const divisior = Math.round(firstNum / 2);
+    const secondNum = firstNum * divisior;
+    const question = () => console.log(`${firstNum}, ${secondNum}`);
+    question();
+    const answer = getAnswer();
+    const correctAnswer = String(getCorrectAnswer(divisior, firstNum, secondNum));
 
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`);
+    if (answer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`);
+      return;
+    }
   }
   console.log(`Congratulations, ${userName}!`);
 };
