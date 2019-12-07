@@ -12,15 +12,16 @@ const askQuestion = (number) => console.log(`Question: ${number}`);
 
 const getAnswer = () => readlineSync.question('Your answer: ');
 
-const getCorrectAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
-
 const isPrime = (num) => {
-  for (let i = 0; i < num; i += 1) {
-    if (num % i > 0) {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
       return false;
     }
   }
+  return true;
 };
+const getCorrectAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
+
 
 const startGame = () => {
   sayWelcome();
