@@ -31,7 +31,9 @@
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-even.js"
+    "brain-calc": "dist/bin/brain-even.js",
+    "brain-progression": "dist/bin/brain-progression.js",
+    "brain-prime": "dist/bin/brain-prime.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
