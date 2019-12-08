@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import {
   sayWelcome, insertBlankLine, getUserName, greetUser,
@@ -64,4 +63,4 @@ const startGame = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-startGame();
+export default startGame;

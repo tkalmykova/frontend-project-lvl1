@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+
 import {
   sayWelcome, insertBlankLine, getUserName, greetUser, getRandomNumber, getAnswer,
 } from '..';
@@ -41,4 +41,4 @@ const startGame = () => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-startGame();
+export default startGame;
