@@ -1,7 +1,7 @@
 
 import readlineSync from 'readline-sync';
 import {
-  sayWelcome, insertBlankLine, getUserName, greetUser,
+  insertBlankLine, getUserName, greetUser,
 } from '..';
 
 const describeRulesPrime = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -24,7 +24,6 @@ const getCorrectAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
 
 
 const startGame = () => {
-  sayWelcome();
   describeRulesPrime();
   insertBlankLine();
 

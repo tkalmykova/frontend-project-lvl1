@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import {
-  sayWelcome, insertBlankLine, getUserName, greetUser,
+  insertBlankLine,
 } from '..';
 
 const describeRulesProgression = () => console.log('What number is missing in the progression?');
@@ -32,13 +32,8 @@ const getCorrectAnswer = (firstElement, difference, n) => {
   return elementToGuess;
 };
 
-const startGame = () => {
-  sayWelcome();
+const startGame = (userName) => {
   describeRulesProgression();
-  insertBlankLine();
-
-  const userName = getUserName();
-  greetUser(userName);
   insertBlankLine();
 
   for (let i = 0; i < 3; i += 1) {

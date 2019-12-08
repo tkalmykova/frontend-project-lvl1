@@ -1,6 +1,6 @@
 
 import {
-  sayWelcome, insertBlankLine, getUserName, greetUser, getRandomNumber, getAnswer,
+  insertBlankLine, getRandomNumber, getAnswer,
 } from '..';
 
 const describeRulesCalc = () => console.log('What is the result of the expression?');
@@ -32,13 +32,8 @@ const getCorrectAnswer = (operator, firstArg, secondArg) => {
       return Math.round(firstArg * secondArg);
   }
 };
-const startGame = () => {
-  sayWelcome();
+const startGame = (userName) => {
   describeRulesCalc();
-  insertBlankLine();
-
-  const userName = getUserName();
-  greetUser(userName);
   insertBlankLine();
 
   for (let i = 0; i < 3; i += 1) {

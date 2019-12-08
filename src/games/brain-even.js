@@ -1,7 +1,7 @@
 
 import readlineSync from 'readline-sync';
 import {
-  sayWelcome, insertBlankLine, describeRules, getUserName, greetUser,
+  insertBlankLine, describeRules,
 } from '..';
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
@@ -14,13 +14,8 @@ const isEven = (num) => num % 2 === 0;
 
 const getCorrectAnswer = (num) => (isEven(num) ? 'yes' : 'no');
 
-const startGame = () => {
-  sayWelcome();
+const startGame = (userName) => {
   describeRules();
-  insertBlankLine();
-
-  const userName = getUserName();
-  greetUser(userName);
   insertBlankLine();
 
   for (let i = 0; i < 3; i += 1) {
