@@ -3,7 +3,7 @@ import {
   insertBlankLine,
 } from '..';
 
-const describeRulesProgression = () => console.log('What number is missing in the progression?');
+const describeRules = () => console.log('What number is missing in the progression?');
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
@@ -33,7 +33,7 @@ const getCorrectAnswer = (firstElement, difference, n) => {
 };
 
 const startGame = (userName) => {
-  describeRulesProgression();
+  describeRules();
   insertBlankLine();
 
   for (let i = 0; i < 3; i += 1) {

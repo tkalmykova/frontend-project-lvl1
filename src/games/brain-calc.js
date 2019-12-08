@@ -3,7 +3,7 @@ import {
   insertBlankLine, getRandomNumber, getAnswer,
 } from '..';
 
-const describeRulesCalc = () => console.log('What is the result of the expression?');
+const describeRules = () => console.log('What is the result of the expression?');
 
 const getRandomOperator = () => {
   const operatorIndex = getRandomNumber(0, 3);
@@ -33,7 +33,7 @@ const getCorrectAnswer = (operator, firstArg, secondArg) => {
   }
 };
 const startGame = (userName) => {
-  describeRulesCalc();
+  describeRules();
   insertBlankLine();
 
   for (let i = 0; i < 3; i += 1) {

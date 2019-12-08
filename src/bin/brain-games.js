@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import { sayWelcome, insertBlankLine, getAnswer, getUserName, greetUser } from '..';
+import {
+  sayWelcome, insertBlankLine, getAnswer, getUserName, greetUser,
+} from '..';
 import startBrainEvenGame from '../games/brain-even';
 import startBrainCalcGame from '../games/brain-calc';
 import startBrainGcdGame from '../games/brain-gcd';

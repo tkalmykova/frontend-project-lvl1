@@ -3,7 +3,7 @@ import {
   insertBlankLine, getRandomNumber, getAnswer,
 } from '..';
 
-const describeRulesGcd = () => console.log('Find the greatest common divisor of given numbers.');
+const describeRules = () => console.log('Find the greatest common divisor of given numbers.');
 
 const getCorrectAnswer = (divisior, firstNum, secondNum) => {
   let biggestDenominator = 1;
@@ -16,7 +16,7 @@ const getCorrectAnswer = (divisior, firstNum, secondNum) => {
   return biggestDenominator;
 };
 const startGame = (userName) => {
-  describeRulesGcd();
+  describeRules();
   insertBlankLine();
   for (let i = 0; i < 3; i += 1) {
     const firstNum = Math.round(getRandomNumber(1, 20));

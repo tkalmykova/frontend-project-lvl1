@@ -1,8 +1,8 @@
 
 import readlineSync from 'readline-sync';
-import {
-  insertBlankLine, describeRules,
-} from '..';
+import { insertBlankLine } from '..';
+
+const describeRules = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 

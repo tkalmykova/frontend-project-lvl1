@@ -4,7 +4,7 @@ import {
   insertBlankLine, getUserName, greetUser,
 } from '..';
 
-const describeRulesPrime = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+const describeRules = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
@@ -24,7 +24,7 @@ const getCorrectAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
 
 
 const startGame = () => {
-  describeRulesPrime();
+  describeRules();
   insertBlankLine();
 
   const userName = getUserName();
