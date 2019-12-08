@@ -49,7 +49,9 @@ const startGame = () => {
     const elementToGuessPosition = elementToGuessIndex + 2;
     askQuestion(firstElement, difference, elementToGuessIndex);
     const answer = getAnswer();
-    const correctAnswer = String(getCorrectAnswer(firstElement, difference, elementToGuessPosition));
+    const correctAnswer = String(
+      getCorrectAnswer(firstElement, difference, elementToGuessPosition),
+    );
 
     if (answer === correctAnswer) {
       console.log('Correct!');
