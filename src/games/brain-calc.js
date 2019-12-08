@@ -1,6 +1,11 @@
 
 import {
-  insertBlankLine, getRandomNumber, getAnswer,
+  insertBlankLine,
+  getRandomNumber,
+  getAnswer,
+  showSuccessMessage,
+  showFailureMessage,
+  showEndGameMessage,
 } from '..';
 
 const describeRules = () => console.log('What is the result of the expression?');
@@ -41,19 +46,18 @@ const startGame = (userName) => {
     const firstNum = getRandomNumber(1, 10);
     const secondNum = getRandomNumber(1, 10);
 
-
     askQuestion(operator, firstNum, secondNum);
     const answer = getAnswer();
     const correctAnswer = String(getCorrectAnswer(operator, firstNum, secondNum));
 
     if (answer === correctAnswer) {
-      console.log('Correct!');
+      showSuccessMessage();
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`);
+      showFailureMessage(answer, correctAnswer, userName);
       return;
     }
   }
 
-  console.log(`Congratulations, ${userName}!`);
+  showEndGameMessage(userName);
 };
 export default startGame;

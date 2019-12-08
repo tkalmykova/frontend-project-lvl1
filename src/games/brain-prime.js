@@ -1,7 +1,12 @@
 
 import readlineSync from 'readline-sync';
 import {
-  insertBlankLine, getUserName, greetUser,
+  insertBlankLine,
+  getUserName,
+  greetUser,
+  showSuccessMessage,
+  showFailureMessage,
+  showEndGameMessage,
 } from '..';
 
 const describeRules = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -39,14 +44,13 @@ const startGame = () => {
     const correctAnswer = getCorrectAnswer(num);
 
     if (answer === correctAnswer) {
-      console.log('Correct!');
+      showSuccessMessage();
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`);
+      showFailureMessage(answer, correctAnswer, userName);
       return;
     }
   }
-
-  console.log(`Congratulations, ${userName}!`);
+  showEndGameMessage(userName);
 };
 
 export default startGame;

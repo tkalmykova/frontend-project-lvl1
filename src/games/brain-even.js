@@ -1,6 +1,11 @@
 
 import readlineSync from 'readline-sync';
-import { insertBlankLine } from '..';
+import {
+  insertBlankLine,
+  showSuccessMessage,
+  showFailureMessage,
+  showEndGameMessage,
+} from '..';
 
 const describeRules = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
@@ -26,14 +31,13 @@ const startGame = (userName) => {
     const correctAnswer = getCorrectAnswer(num);
 
     if (answer === correctAnswer) {
-      console.log('Correct!');
+      showSuccessMessage();
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`);
+      showFailureMessage(answer, correctAnswer, userName);
       return;
     }
   }
-
-  console.log(`Congratulations, ${userName}!`);
+  showEndGameMessage(userName);
 };
 
 export default startGame;

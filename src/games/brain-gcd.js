@@ -1,6 +1,11 @@
 
 import {
-  insertBlankLine, getRandomNumber, getAnswer,
+  insertBlankLine,
+  getRandomNumber,
+  getAnswer,
+  showSuccessMessage,
+  showFailureMessage,
+  showEndGameMessage,
 } from '..';
 
 const describeRules = () => console.log('Find the greatest common divisor of given numbers.');
@@ -20,6 +25,7 @@ const getCorrectAnswer = (divisior, firstNum, secondNum) => {
 const startGame = (userName) => {
   describeRules();
   insertBlankLine();
+
   for (let i = 0; i < 3; i += 1) {
     const firstNum = Math.round(getRandomNumber(1, 20));
     const divisior = Math.round(firstNum / 2);
@@ -29,12 +35,12 @@ const startGame = (userName) => {
     const correctAnswer = String(getCorrectAnswer(divisior, firstNum, secondNum));
 
     if (answer === correctAnswer) {
-      console.log('Correct!');
+      showSuccessMessage();
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`);
+      showFailureMessage(answer, correctAnswer, userName);
       return;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  showEndGameMessage(userName);
 };
 export default startGame;
