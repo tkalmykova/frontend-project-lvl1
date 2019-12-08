@@ -28,13 +28,13 @@ const askQuestion = (operator, firstArg, secondArg) => console.log(`Question: ${
 const getCorrectAnswer = (operator, firstArg, secondArg) => {
   switch (operator) {
     case '+':
-      return Math.round(firstArg + secondArg);
+      return firstArg + secondArg;
     case '-':
-      return Math.round(firstArg - secondArg);
+      return firstArg - secondArg;
     case '/':
       return Math.round(firstArg / secondArg);
     default:
-      return Math.round(firstArg * secondArg);
+      return firstArg * secondArg;
   }
 };
 const startGame = (userName) => {
