@@ -2,8 +2,6 @@
 import readlineSync from 'readline-sync';
 import {
   insertBlankLine,
-  getUserName,
-  greetUser,
   showSuccessMessage,
   showFailureMessage,
   showEndGameMessage,
@@ -28,12 +26,8 @@ const isPrime = (num) => {
 const getCorrectAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
 
 
-const startGame = () => {
+const startGame = (userName) => {
   describeRules();
-  insertBlankLine();
-
-  const userName = getUserName();
-  greetUser(userName);
   insertBlankLine();
 
   for (let i = 0; i < 3; i += 1) {
