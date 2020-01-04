@@ -1,19 +1,5 @@
-
-import readlineSync from 'readline-sync';
-import {
-  insertBlankLine,
-  showSuccessMessage,
-  showFailureMessage,
-  showEndGameMessage,
-} from '..';
-
-const describeRules = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-const askQuestion = (number) => console.log(`Question: ${number}`);
-
-const getAnswer = () => readlineSync.question('Your answer: ');
+import { cons } from '@hexlet/pairs';
+import { getRandomNumber } from '../utils';
 
 const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
@@ -23,28 +9,18 @@ const isPrime = (num) => {
   }
   return true;
 };
+
+const getQuestion = (number) => `${number}`;
+
 const getCorrectAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
 
+export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const startGame = (userName) => {
-  describeRules();
-  insertBlankLine();
+export const getQuestionAndAnswer = () => {
+  const num = getRandomNumber(0, 999);
 
-  for (let i = 0; i < 3; i += 1) {
-    const num = getRandomNumber(0, 999);
-    askQuestion(num);
+  const question = getQuestion(num);
+  const answer = getCorrectAnswer(num);
 
-    const answer = getAnswer();
-    const correctAnswer = getCorrectAnswer(num);
-
-    if (answer === correctAnswer) {
-      showSuccessMessage();
-    } else {
-      showFailureMessage(answer, correctAnswer, userName);
-      return;
-    }
-  }
-  showEndGameMessage(userName);
+  return cons(question, answer);
 };
-
-export default startGame;

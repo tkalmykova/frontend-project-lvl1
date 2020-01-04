@@ -1,43 +1,19 @@
-
-import readlineSync from 'readline-sync';
-import {
-  insertBlankLine,
-  showSuccessMessage,
-  showFailureMessage,
-  showEndGameMessage,
-} from '..';
-
-const describeRules = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-const askQuestion = (number) => console.log(`Question: ${number}`);
-
-const getAnswer = () => readlineSync.question('Your answer: ');
+import { cons } from '@hexlet/pairs';
+import { getRandomNumber } from '../utils';
 
 const isEven = (num) => num % 2 === 0;
 
+const getQuestion = (number) => `${number}`;
+
 const getCorrectAnswer = (num) => (isEven(num) ? 'yes' : 'no');
 
-const startGame = (userName) => {
-  describeRules();
-  insertBlankLine();
+export const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  for (let i = 0; i < 3; i += 1) {
-    const num = getRandomNumber(0, 999);
-    askQuestion(num);
+export const getQuestionAndAnswer = () => {
+  const num = getRandomNumber(0, 999);
 
-    const answer = getAnswer();
-    const correctAnswer = getCorrectAnswer(num);
+  const question = getQuestion(num);
+  const answer = getCorrectAnswer(num);
 
-    if (answer === correctAnswer) {
-      showSuccessMessage();
-    } else {
-      showFailureMessage(answer, correctAnswer, userName);
-      return;
-    }
-  }
-  showEndGameMessage(userName);
+  return cons(question, answer);
 };
-
-export default startGame;

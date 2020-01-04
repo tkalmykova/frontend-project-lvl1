@@ -1,14 +1,5 @@
-import readlineSync from 'readline-sync';
-import {
-  insertBlankLine,
-  showSuccessMessage,
-  showFailureMessage,
-  showEndGameMessage,
-} from '..';
-
-const describeRules = () => console.log('What number is missing in the progression?');
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+import { cons } from '@hexlet/pairs';
+import { getRandomNumber } from '../utils';
 
 const displayProgression = (firstElement, difference, elementToGuessIndex) => {
   let previousElement = firstElement;
@@ -22,42 +13,26 @@ const displayProgression = (firstElement, difference, elementToGuessIndex) => {
     }
     previousElement = newElement;
   }
-
   return str;
 };
 
-const askQuestion = (firstElement, difference, elementToGuessIndex) => console.log(`Question: ${displayProgression(firstElement, difference, elementToGuessIndex)}`);
-
-const getAnswer = () => readlineSync.question('Your answer: ');
+const getQuestion = (firstElement, difference, elementToGuessIndex) => `${displayProgression(firstElement, difference, elementToGuessIndex)}`;
 
 const getCorrectAnswer = (firstElement, difference, n) => {
   const elementToGuess = firstElement + (n - 1) * difference;
   return elementToGuess;
 };
 
-const startGame = (userName) => {
-  describeRules();
-  insertBlankLine();
+export const description = 'What number is missing in the progression?';
 
-  for (let i = 0; i < 3; i += 1) {
-    const firstElement = getRandomNumber(1, 10);
-    const difference = getRandomNumber(1, 50);
-    const elementToGuessIndex = getRandomNumber(0, 9);
-    const elementToGuessPosition = elementToGuessIndex + 2;
-    askQuestion(firstElement, difference, elementToGuessIndex);
-    const answer = getAnswer();
-    const correctAnswer = String(
-      getCorrectAnswer(firstElement, difference, elementToGuessPosition),
-    );
+export const getQuestionAndAnswer = () => {
+  const firstElement = getRandomNumber(1, 10);
+  const difference = getRandomNumber(1, 50);
+  const elementToGuessIndex = getRandomNumber(0, 9);
+  const elementToGuessPosition = elementToGuessIndex + 2;
 
-    if (answer === correctAnswer) {
-      showSuccessMessage();
-    } else {
-      showFailureMessage(answer, correctAnswer, userName);
-      return;
-    }
-  }
-  showEndGameMessage(userName);
+  const question = getQuestion(firstElement, difference, elementToGuessIndex);
+  const answer = getCorrectAnswer(firstElement, difference, elementToGuessPosition);
+
+  return cons(question, answer);
 };
-
-export default startGame;

@@ -1,16 +1,7 @@
+import { cons } from '@hexlet/pairs';
+import { getRandomNumber } from '../utils';
 
-import {
-  insertBlankLine,
-  getRandomNumber,
-  getAnswer,
-  showSuccessMessage,
-  showFailureMessage,
-  showEndGameMessage,
-} from '..';
-
-const describeRules = () => console.log('Find the greatest common divisor of given numbers.');
-
-const askQuestion = (firstNum, secondNum) => console.log(`${firstNum}, ${secondNum}`);
+const getQuestion = (firstNum, secondNum) => `${firstNum}, ${secondNum}`;
 
 const getCorrectAnswer = (divisior, firstNum, secondNum) => {
   let biggestDenominator = 1;
@@ -22,25 +13,16 @@ const getCorrectAnswer = (divisior, firstNum, secondNum) => {
   }
   return biggestDenominator;
 };
-const startGame = (userName) => {
-  describeRules();
-  insertBlankLine();
 
-  for (let i = 0; i < 3; i += 1) {
-    const firstNum = Math.round(getRandomNumber(1, 20));
-    const divisior = Math.round(firstNum / 2);
-    const secondNum = firstNum * divisior;
-    askQuestion(firstNum, secondNum);
-    const answer = getAnswer();
-    const correctAnswer = String(getCorrectAnswer(divisior, firstNum, secondNum));
+export const description = 'Find the greatest common divisor of given numbers.';
 
-    if (answer === correctAnswer) {
-      showSuccessMessage();
-    } else {
-      showFailureMessage(answer, correctAnswer, userName);
-      return;
-    }
-  }
-  showEndGameMessage(userName);
+export const getQuestionAndAnswer = () => {
+  const firstNum = Math.round(getRandomNumber(1, 20));
+  const divisior = Math.round(firstNum / 2);
+  const secondNum = firstNum * divisior;
+
+  const question = getQuestion(firstNum, secondNum);
+  const answer = getCorrectAnswer(divisior, firstNum, secondNum);
+
+  return cons(question, answer);
 };
-export default startGame;

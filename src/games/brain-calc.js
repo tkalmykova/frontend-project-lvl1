@@ -1,14 +1,5 @@
-
-import {
-  insertBlankLine,
-  getRandomNumber,
-  getAnswer,
-  showSuccessMessage,
-  showFailureMessage,
-  showEndGameMessage,
-} from '..';
-
-const describeRules = () => console.log('What is the result of the expression?');
+import { cons } from '@hexlet/pairs';
+import { getRandomNumber } from '../utils';
 
 const getRandomOperator = () => {
   const operatorIndex = getRandomNumber(0, 3);
@@ -24,7 +15,9 @@ const getRandomOperator = () => {
       return '*';
   }
 };
-const askQuestion = (operator, firstArg, secondArg) => console.log(`Question: ${firstArg} ${operator} ${secondArg}`);
+
+const getQuestion = (operator, firstArg, secondArg) => `${firstArg} ${operator} ${secondArg}`;
+
 const getCorrectAnswer = (operator, firstArg, secondArg) => {
   switch (operator) {
     case '+':
@@ -37,27 +30,16 @@ const getCorrectAnswer = (operator, firstArg, secondArg) => {
       return firstArg * secondArg;
   }
 };
-const startGame = (userName) => {
-  describeRules();
-  insertBlankLine();
 
-  for (let i = 0; i < 3; i += 1) {
-    const operator = getRandomOperator();
-    const firstNum = getRandomNumber(1, 10);
-    const secondNum = getRandomNumber(1, 10);
+export const description = 'What is the result of the expression?';
 
-    askQuestion(operator, firstNum, secondNum);
-    const answer = getAnswer();
-    const correctAnswer = String(getCorrectAnswer(operator, firstNum, secondNum));
+export const getQuestionAndAnswer = () => {
+  const operator = getRandomOperator();
+  const firstNum = getRandomNumber(1, 10);
+  const secondNum = getRandomNumber(1, 10);
 
-    if (answer === correctAnswer) {
-      showSuccessMessage();
-    } else {
-      showFailureMessage(answer, correctAnswer, userName);
-      return;
-    }
-  }
+  const question = getQuestion(operator, firstNum, secondNum);
+  const answer = getCorrectAnswer(operator, firstNum, secondNum);
 
-  showEndGameMessage(userName);
+  return cons(question, answer);
 };
-export default startGame;
