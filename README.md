@@ -3,14 +3,22 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/43fbbb2f6a4ce58b1140/maintainability)](https://codeclimate.com/github/tkalmykova/frontend-project-lvl1/maintainability)
 [![Build Status](https://travis-ci.org/tkalmykova/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/tkalmykova/frontend-project-lvl1)
 
-[![asciicast](https://asciinema.org/a/vtICbpZrmUo26fPGUzIs3HKGR.svg)](https://asciinema.org/a/vtICbpZrmUo26fPGUzIs3HKGR)
+## brain-even
 
-[![asciicast](https://asciinema.org/a/Og1PYwaz6nPsSa0z0OzHSPyie.svg)](https://asciinema.org/a/Og1PYwaz6nPsSa0z0OzHSPyie)
+[![asciicast](https://asciinema.org/a/PFD7UImoVq9WSZB4pecmCW4Al.svg)](https://asciinema.org/a/PFD7UImoVq9WSZB4pecmCW4Al)
 
-[![asciicast](https://asciinema.org/a/GhqnLfuvH1jBcKK3RdGQjqghL.svg)](https://asciinema.org/a/GhqnLfuvH1jBcKK3RdGQjqghL)
+## brain-calc
 
-[![asciicast](https://asciinema.org/a/d8x8Cj8eN0dyBSm3ndXGPObca.svg)](https://asciinema.org/a/d8x8Cj8eN0dyBSm3ndXGPObca)
+[![asciicast](https://asciinema.org/a/IOdAUIabGNIhOy1d7ahNIdArs.svg)](https://asciinema.org/a/IOdAUIabGNIhOy1d7ahNIdArs)
 
-[![asciicast](https://asciinema.org/a/z9qjb1ipXHPpJXO61hh9vpNo6.svg)](https://asciinema.org/a/z9qjb1ipXHPpJXO61hh9vpNo6)
+## brain-gcd
 
-[![asciicast](https://asciinema.org/a/DN9pilj4iqpBCIj77dQZ3faTs.svg)](https://asciinema.org/a/DN9pilj4iqpBCIj77dQZ3faTs)
+[![asciicast](https://asciinema.org/a/rFiNfKg3vrfjnEW8p4kddX4Ma.svg)](https://asciinema.org/a/rFiNfKg3vrfjnEW8p4kddX4Ma)
+
+## brain-prime
+
+[![asciicast](https://asciinema.org/a/aFnp4mtDzSUTxeRvg5f2N6yDG.svg)](https://asciinema.org/a/aFnp4mtDzSUTxeRvg5f2N6yDG)
+
+## brain-progression
+
+[![asciicast](https://asciinema.org/a/rZIloyOUcdcVf37CiiIhGaO34.svg)](https://asciinema.org/a/rZIloyOUcdcVf37CiiIhGaO34)
