@@ -2,18 +2,9 @@ import { cons } from '@hexlet/pairs';
 import { getRandomNumber } from '../utils';
 
 const getRandomOperator = () => {
-  const operatorIndex = getRandomNumber(0, 3);
-
-  switch (operatorIndex) {
-    case 0:
-      return '+';
-    case 1:
-      return '-';
-    case 2:
-      return '/';
-    default:
-      return '*';
-  }
+  const operators = ['+', '-', '/', '*'];
+  const operatorIndex = getRandomNumber(0, operators.length);
+  return operators[operatorIndex];
 };
 
 const getQuestion = (operator, firstArg, secondArg) => `${firstArg} ${operator} ${secondArg}`;
