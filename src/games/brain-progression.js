@@ -1,10 +1,12 @@
 import { cons } from '@hexlet/pairs';
 import { getRandomNumber } from '../utils';
 
+const PROGRESSION_LENGTH = 9;
+
 const displayProgression = (firstElement, difference, elementToGuessIndex) => {
   let previousElement = firstElement;
   let str = `${firstElement}`;
-  for (let i = 0; i < 9; i += 1) {
+  for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
     const newElement = previousElement + difference;
     if (i === elementToGuessIndex) {
       str += ' ..';
