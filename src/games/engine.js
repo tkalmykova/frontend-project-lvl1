@@ -1,46 +1,35 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
-import { print, printBlankLine } from '../utils';
-
-const sayWelcome = () => print('Welcome to the Brain Games!');
-const getUserName = () => readlineSync.question('May I have your name? ');
-const greetUser = (userName) => print(`Hello, ${userName}!`);
-const showDescription = (text) => print(text);
-const showQuestion = (questionText) => print(`Question: ${questionText}`);
-const getAnswer = () => readlineSync.question('Your answer: ');
-const showSuccessMessage = () => print('Correct!');
-const showFailureMessage = (answer, correctAnswer, userName) => print(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`);
-const showEndGameMessage = (userName) => print(`Congratulations, ${userName}!`);
 
 const createGame = (description, getQuestionAndAnswer) => () => {
-  sayWelcome();
-  printBlankLine();
+  console.log('Welcome to the Brain Games!');
+  console.log();
 
-  const userName = getUserName();
-  greetUser(userName);
-  printBlankLine();
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  console.log();
 
-  showDescription(description);
-  printBlankLine();
+  console.log(description);
+  console.log();
 
   for (let i = 0; i < 3; i += 1) {
     const questionAnswerPair = getQuestionAndAnswer();
     const question = car(questionAnswerPair);
     const correctAnswer = cdr(questionAnswerPair);
 
-    showQuestion(question);
-    const answer = getAnswer();
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
 
     if (answer === String(correctAnswer)) {
-      showSuccessMessage();
+      console.log('Correct!');
     } else {
-      showFailureMessage(answer, correctAnswer, userName);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`);
       return;
     }
-    printBlankLine();
+    console.log();
   }
 
-  showEndGameMessage(userName);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default createGame;
