@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import { getRandomNumber } from '../utils';
+import createGame from './engine';
 
 const PROGRESSION_LENGTH = 9;
 
@@ -25,9 +26,9 @@ const getCorrectAnswer = (firstElement, difference, n) => {
   return elementToGuess;
 };
 
-export const description = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-export const getQuestionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const firstElement = getRandomNumber(1, 10);
   const difference = getRandomNumber(1, 50);
   const elementToGuessIndex = getRandomNumber(0, 9);
@@ -38,3 +39,5 @@ export const getQuestionAndAnswer = () => {
 
   return cons(question, answer);
 };
+
+export default createGame(description, getQuestionAndAnswer);

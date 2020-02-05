@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import { getRandomNumber } from '../utils';
+import createGame from './engine';
 
 const getRandomOperator = () => {
   const operators = ['+', '-', '/', '*'];
@@ -22,9 +23,9 @@ const getCorrectAnswer = (operator, firstArg, secondArg) => {
   }
 };
 
-export const description = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-export const getQuestionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const operator = getRandomOperator();
   const firstNum = getRandomNumber(1, 10);
   const secondNum = getRandomNumber(1, 10);
@@ -34,3 +35,5 @@ export const getQuestionAndAnswer = () => {
 
   return cons(question, answer);
 };
+
+export default createGame(description, getQuestionAndAnswer);
