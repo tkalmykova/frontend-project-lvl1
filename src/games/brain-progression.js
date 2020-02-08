@@ -2,40 +2,38 @@ import { cons } from '@hexlet/pairs';
 import getRandomNumber from '../utils';
 import createGame from '../engine';
 
-const DISPLAYABLE_ELEMENTS_COUNT = 9;
+const DISPLAYABLE_ELEMENTS_COUNT = 10;
 
-const displayProgression = (firstElement, difference, elementToGuessIndex) => {
-  let previousElement = firstElement;
-  let progression = `${firstElement}`;
+const getProgression = (start, difference, elementToGuessIndex) => {
+  let progression = '';
+
   for (let i = 0; i < DISPLAYABLE_ELEMENTS_COUNT; i += 1) {
-    const newElement = previousElement + difference;
+    const element = start + difference * i;
     if (i === elementToGuessIndex) {
-      progression += ' ..';
+      progression = `${progression} ..`;
     } else {
-      progression += ` ${newElement}`;
+      progression = `${progression} ${element}`;
     }
-    previousElement = newElement;
   }
   return progression;
 };
 
-const getQuestion = (firstElement, difference, elementToGuessIndex) => `${displayProgression(firstElement, difference, elementToGuessIndex)}`;
+const getQuestion = (progressionStart, progressionDifference, elementToGuessIndex) => `${getProgression(progressionStart, progressionDifference, elementToGuessIndex)}`;
 
-const getCorrectAnswer = (firstElement, difference, n) => {
-  const elementToGuess = firstElement + (n - 1) * difference;
+const getCorrectAnswer = (progressionStart, progressionDifference, i) => {
+  const elementToGuess = progressionStart + progressionDifference * i;
   return elementToGuess;
 };
 
 const description = 'What number is missing in the progression?';
 
 const getQuestionAndAnswer = () => {
-  const firstElement = getRandomNumber(1, 10);
-  const difference = getRandomNumber(1, 50);
+  const progressionStart = getRandomNumber(1, 10);
+  const progressionDifference = getRandomNumber(1, 50);
   const elementToGuessIndex = getRandomNumber(0, DISPLAYABLE_ELEMENTS_COUNT);
-  const elementToGuessPosition = elementToGuessIndex + 2;
 
-  const question = getQuestion(firstElement, difference, elementToGuessIndex);
-  const answer = getCorrectAnswer(firstElement, difference, elementToGuessPosition);
+  const question = getQuestion(progressionStart, progressionDifference, elementToGuessIndex);
+  const answer = getCorrectAnswer(progressionStart, progressionDifference, elementToGuessIndex);
 
   return cons(question, answer);
 };
