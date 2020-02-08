@@ -18,7 +18,7 @@ const getCorrectAnswer = (divisior, firstNum, secondNum) => {
 const description = 'Find the greatest common divisor of given numbers.';
 
 const getQuestionAndAnswer = () => {
-  const firstNum = Math.round(getRandomNumber(1, 20));
+  const firstNum = getRandomNumber(1, 20);
   const divisior = Math.round(firstNum / 2);
   const secondNum = firstNum * divisior;
 
