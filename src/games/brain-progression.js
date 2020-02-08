@@ -2,12 +2,12 @@ import { cons } from '@hexlet/pairs';
 import getRandomNumber from '../utils';
 import createGame from '../engine';
 
-const PROGRESSION_LENGTH = 9;
+const DISPLAYABLE_ELEMENTS_COUNT = 9;
 
 const displayProgression = (firstElement, difference, elementToGuessIndex) => {
   let previousElement = firstElement;
   let str = `${firstElement}`;
-  for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
+  for (let i = 0; i < DISPLAYABLE_ELEMENTS_COUNT; i += 1) {
     const newElement = previousElement + difference;
     if (i === elementToGuessIndex) {
       str += ' ..';
@@ -31,7 +31,7 @@ const description = 'What number is missing in the progression?';
 const getQuestionAndAnswer = () => {
   const firstElement = getRandomNumber(1, 10);
   const difference = getRandomNumber(1, 50);
-  const elementToGuessIndex = getRandomNumber(0, 9);
+  const elementToGuessIndex = getRandomNumber(0, DISPLAYABLE_ELEMENTS_COUNT);
   const elementToGuessPosition = elementToGuessIndex + 2;
 
   const question = getQuestion(firstElement, difference, elementToGuessIndex);
