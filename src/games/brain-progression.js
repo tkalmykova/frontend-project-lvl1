@@ -6,17 +6,17 @@ const DISPLAYABLE_ELEMENTS_COUNT = 9;
 
 const displayProgression = (firstElement, difference, elementToGuessIndex) => {
   let previousElement = firstElement;
-  let str = `${firstElement}`;
+  let progression = `${firstElement}`;
   for (let i = 0; i < DISPLAYABLE_ELEMENTS_COUNT; i += 1) {
     const newElement = previousElement + difference;
     if (i === elementToGuessIndex) {
-      str += ' ..';
+      progression += ' ..';
     } else {
-      str += ` ${newElement}`;
+      progression += ` ${newElement}`;
     }
     previousElement = newElement;
   }
-  return str;
+  return progression;
 };
 
 const getQuestion = (firstElement, difference, elementToGuessIndex) => `${displayProgression(firstElement, difference, elementToGuessIndex)}`;
