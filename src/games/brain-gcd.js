@@ -23,7 +23,7 @@ const getQuestionAndAnswer = () => {
   const secondNum = firstNum * divisior;
 
   const question = getQuestion(firstNum, secondNum);
-  const answer = getCorrectAnswer(divisior, firstNum, secondNum);
+  const answer = String(getCorrectAnswer(divisior, firstNum, secondNum));
 
   return cons(question, answer);
 };

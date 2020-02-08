@@ -33,7 +33,9 @@ const getQuestionAndAnswer = () => {
   const elementToGuessIndex = getRandomNumber(0, DISPLAYABLE_ELEMENTS_COUNT);
 
   const question = getQuestion(progressionStart, progressionDifference, elementToGuessIndex);
-  const answer = getCorrectAnswer(progressionStart, progressionDifference, elementToGuessIndex);
+  const answer = String(
+    getCorrectAnswer(progressionStart, progressionDifference, elementToGuessIndex),
+  );
 
   return cons(question, answer);
 };

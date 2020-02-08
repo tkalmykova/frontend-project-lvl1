@@ -14,7 +14,7 @@ const getQuestionAndAnswer = () => {
   const num = getRandomNumber(0, 999);
 
   const question = getQuestion(num);
-  const answer = getCorrectAnswer(num);
+  const answer = String(getCorrectAnswer(num));
 
   return cons(question, answer);
 };

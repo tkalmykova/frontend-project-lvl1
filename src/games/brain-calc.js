@@ -31,7 +31,7 @@ const getQuestionAndAnswer = () => {
   const secondNum = getRandomNumber(1, 10);
 
   const question = getQuestion(operator, firstNum, secondNum);
-  const answer = getCorrectAnswer(operator, firstNum, secondNum);
+  const answer = String(getCorrectAnswer(operator, firstNum, secondNum));
 
   return cons(question, answer);
 };
