@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import getRandomNumber from '../utils';
-import createGame from './engine';
+import createGame from '../engine';
 
 const isPrime = (num) => {
   for (let i = 2; i <= num / 2; i += 1) {

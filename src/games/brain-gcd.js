@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import getRandomNumber from '../utils';
-import createGame from './engine';
+import createGame from '../engine';
 
 const getQuestion = (firstNum, secondNum) => `${firstNum}, ${secondNum}`;
 
