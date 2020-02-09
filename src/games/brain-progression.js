@@ -2,7 +2,7 @@ import { cons } from '@hexlet/pairs';
 import getRandomNumber from '../utils';
 import createGame from '../engine';
 
-const DISPLAYABLE_ELEMENTS_COUNT = 10;
+const DISPLAYABLE_ELEMENTS_COUNT = 9;
 
 const getProgression = (start, difference, elementToGuessIndex) => {
   let progression = '';
