@@ -4,7 +4,7 @@ import createGame from '../engine';
 
 const getRandomOperator = () => {
   const operators = ['+', '-', '/', '*'];
-  const operatorIndex = getRandomNumber(0, operators.length);
+  const operatorIndex = getRandomNumber(0, operators.length - 1);
   return operators[operatorIndex];
 };
 
