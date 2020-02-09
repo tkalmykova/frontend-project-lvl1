@@ -28,4 +28,4 @@ make install
 
 ## brain-progression
 
-[![asciicast](https://asciinema.org/a/rZIloyOUcdcVf37CiiIhGaO34.svg)](https://asciinema.org/a/rZIloyOUcdcVf37CiiIhGaO34)
+[![asciicast](https://asciinema.org/a/FTzmcfE6swfTMvhFD30hA0DB7.svg)](https://asciinema.org/a/FTzmcfE6swfTMvhFD30hA0DB7)
