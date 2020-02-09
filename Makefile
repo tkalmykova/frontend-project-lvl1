@@ -1,4 +1,4 @@
-install:
+install: publish
 	npm install && npm link
 start:
 	npx babel-node src/bin/brain-progression.js
