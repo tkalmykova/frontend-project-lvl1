@@ -4,11 +4,11 @@ import createGame from '../engine';
 
 const PROGRESSION_LENGTH = 10;
 
-const getQuestion = (progressionStart, progressionDifference, hiddenElementIndex) => {
+const getQuestion = (start, difference, hiddenElementIndex) => {
   let progression = '';
 
   for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
-    const element = progressionStart + progressionDifference * i;
+    const element = start + difference * i;
     if (i === hiddenElementIndex) {
       progression = `${progression} ..`;
     } else {
@@ -18,20 +18,20 @@ const getQuestion = (progressionStart, progressionDifference, hiddenElementIndex
   return progression;
 };
 
-const getCorrectAnswer = (progressionStart, progressionDifference, hiddenElementIndex) => (
-  progressionStart + progressionDifference * hiddenElementIndex
+const getCorrectAnswer = (start, difference, hiddenElementIndex) => (
+  start + difference * hiddenElementIndex
 );
 
 const description = 'What number is missing in the progression?';
 
 const getQuestionAndAnswer = () => {
-  const progressionStart = getRandomNumber(1, 10);
-  const progressionDifference = getRandomNumber(1, 50);
+  const start = getRandomNumber(1, 10);
+  const difference = getRandomNumber(1, 50);
   const hiddenElementIndex = getRandomNumber(0, PROGRESSION_LENGTH - 1);
 
-  const question = getQuestion(progressionStart, progressionDifference, hiddenElementIndex);
+  const question = getQuestion(start, difference, hiddenElementIndex);
   const answer = String(
-    getCorrectAnswer(progressionStart, progressionDifference, hiddenElementIndex),
+    getCorrectAnswer(start, difference, hiddenElementIndex),
   );
 
   return cons(question, answer);
