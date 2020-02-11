@@ -4,15 +4,11 @@ import createGame from '../engine';
 
 const PROGRESSION_LENGTH = 10;
 
-const getProgressionElement = (progressionStart, progressionDifference, n) => (
-  progressionStart + progressionDifference * n
-);
-
 const getQuestion = (progressionStart, progressionDifference, elementToGuessIndex) => {
   let progression = '';
 
   for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
-    const element = getProgressionElement(progressionStart, progressionDifference, i);
+    const element = progressionStart + progressionDifference * i;
     if (i === elementToGuessIndex) {
       progression = `${progression} ..`;
     } else {
@@ -23,7 +19,7 @@ const getQuestion = (progressionStart, progressionDifference, elementToGuessInde
 };
 
 const getCorrectAnswer = (progressionStart, progressionDifference, elementToGuessIndex) => (
-  getProgressionElement(progressionStart, progressionDifference, elementToGuessIndex)
+  progressionStart + progressionDifference * elementToGuessIndex
 );
 
 const description = 'What number is missing in the progression?';
