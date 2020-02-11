@@ -5,17 +5,17 @@ import createGame from '../engine';
 const PROGRESSION_LENGTH = 10;
 
 const getQuestion = (start, difference, hiddenElementIndex) => {
-  let progression = '';
+  const progressionElements = [];
 
   for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
     const element = start + difference * i;
     if (i === hiddenElementIndex) {
-      progression = `${progression} ..`;
+      progressionElements.push('..');
     } else {
-      progression = `${progression} ${element}`;
+      progressionElements.push(element);
     }
   }
-  return progression;
+  return progressionElements.join(' ');
 };
 
 const getCorrectAnswer = (start, difference, hiddenElementIndex) => (
