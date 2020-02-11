@@ -18,8 +18,10 @@ const getCorrectAnswer = (operator, firstArg, secondArg) => {
       return firstArg - secondArg;
     case '/':
       return Math.round(firstArg / secondArg);
-    default:
+    case '*':
       return firstArg * secondArg;
+    default:
+      throw new Error('Unknown operator');
   }
 };
 
